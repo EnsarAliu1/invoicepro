@@ -11,9 +11,9 @@ function Login() {
     setError("");
     loginClient(email, password)
       .then(() => {
-        window.location.href = "/";
+        window.location.href = "/dashboard";
       }).catch((error) => {
-        setError(error);
+        setError(error.message || "Login failed. Please try again.");
       })
   }
 

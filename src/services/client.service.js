@@ -19,6 +19,25 @@ export function loginClient(email, password) {
     .then((response) => response.json())
     .then((clients) => {
       const client = clients[0];
+      if (!client) throw new Error("Invalid email or password.");
       localStorage.setItem("clientId", client.id);
+      localStorage.setItem("client", JSON.stringify(client));
+      return client;
     });
+}
+
+export function getClient() {
+  const currentClient = localStorage.getItem("client");
+  if (!currentClient) return null;
+  try {
+    return JSON.parse(currentClient);
+  } catch {
+    localStorage.removeItem("client");
+    return null;
+  }
+}
+
+export function logOutUser() {
+  localStorage.removeItem("clientId");
+  localStorage.removeItem("client");
 }
