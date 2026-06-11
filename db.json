@@ -1,6 +1,113 @@
 {
-  "posts": [
-    { "id": "1", "title": "First Post", "author": "Alice" },
-    { "id": "2", "title": "Second Post", "author": "Bob" }
-  ]
+  "clients": [
+    {
+      "id": "1",
+      "name": "Acme Corporation",
+      "email": "contact@acme.com",
+      "phone": "(212) 555-0101",
+      "address": "New York, USA"
+    },
+    {
+      "id": "2",
+      "name": "Bright Solutions",
+      "email": "hello@brightsolutions.com",
+      "phone": "(415) 555-0122",
+      "address": "California, USA"
+    },
+    {
+      "id": "3",
+      "name": "Filan Fisteku",
+      "phone": "043577605",
+      "address": "Rr.Harun Beka",
+      "email": "filanfisteku@gmail.com"
+    }
+  ],
+  "items": [
+    {
+      "id": "1",
+      "name": "Website Design",
+      "description": "Professional website design",
+      "type": "Service",
+      "rate": 1800
+    },
+    {
+      "id": "2",
+      "name": "SEO Setup",
+      "description": "SEO Optimization",
+      "type": "Service",
+      "rate": 300
+    }
+  ],
+  "invoices": [
+    {
+      "id": "1",
+      "invoiceNumber": "INV-1001",
+      "clientId": 1,
+      "issueDate": "2024-06-10",
+      "dueDate": "2024-06-25",
+      "paymentTerms": "Net 14 Days",
+      "status": "Paid",
+      "subtotal": 1250,
+      "tax": 0,
+      "total": 1250
+    },
+    {
+      "id": "2",
+      "invoiceNumber": "INV-1002",
+      "clientId": 2,
+      "issueDate": "2024-06-08",
+      "dueDate": "2024-06-22",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 850,
+      "tax": 0,
+      "total": 850
+    }
+  ],
+  "invoiceItems": [
+    {
+      "id": "1",
+      "invoiceId": 1,
+      "itemId": 1,
+      "description": "Website Design",
+      "qty": 1,
+      "rate": 1250,
+      "amount": 1250
+    },
+    {
+      "id": "2",
+      "invoiceId": 2,
+      "itemId": 2,
+      "description": "SEO Setup",
+      "qty": 1,
+      "rate": 850,
+      "amount": 850
+    }
+  ],
+  "payments": [
+    {
+      "id": "1",
+      "invoiceId": 1,
+      "clientId": 1,
+      "amount": 1250,
+      "method": "Credit Card",
+      "status": "Paid",
+      "date": "2024-06-12"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "1",
+      "title": "Hosting",
+      "category": "Software",
+      "amount": 50,
+      "date": "2024-06-01"
+    }
+  ],
+  "settings": {
+    "companyName": "InvoicePro",
+    "currency": "USD",
+    "taxRate": 0
+  },
+  "$schema": "./node_modules/json-server/schema.json"
 }
