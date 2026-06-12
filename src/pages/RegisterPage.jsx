@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { registerClient, getClientByEmail } from "../services/client.service";
+import { registerUser, getUserByEmail } from "../services/user.service";
 
 function RegisterPage() {
-
   const navigate = useNavigate();
-  const [newClient, setnewClient] = useState({
+  const [newUser, setnewUser] = useState({
     name: "",
     phone: "",
     address: "",
@@ -18,23 +17,23 @@ function RegisterPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!newClient.name || !newClient.phone || !newClient.address || !newClient.email || !newClient.password || !confirmPassword) {
+    if (!newUser.name || !newUser.phone || !newUser.address || !newUser.email || !newUser.password || !confirmPassword) {
       setError("Please fill all the fields!");
       return;
     }
 
-    if (newClient.password !== confirmPassword) {
+    if (newUser.password !== confirmPassword) {
       setError("Passwords do not match!");
       return;
     }
 
-    const existing = await getClientByEmail(newClient.email);
+    const existing = await getUserByEmail(newUser.email);
     if (existing.length > 0) {
       setError("An account with this email already exists!");
       return;
     }
 
-    registerClient(newClient).then((result) => {
+    registerUser(newUser).then((result) => {
       console.log(result);
       navigate("/login");
     });
@@ -73,15 +72,15 @@ function RegisterPage() {
             {/* Name */}
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-1.5">
-                Full Name or Company Name
+                Full Name
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Acme Corporation"
-                value={newClient.name}
-                onChange={(e) => { setnewClient(prev => ({ ...prev, name: e.target.value })) }}
+                placeholder="Albert Krasniqi"
+                value={newUser.name}
+                onChange={(e) => { setnewUser(prev => ({ ...prev, name: e.target.value })) }}
                 className="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/60 transition"
               />
             </div>
@@ -96,8 +95,8 @@ function RegisterPage() {
                 id="phone"
                 name="phone"
                 placeholder="+1 (555) 000-0000"
-                value={newClient.phone}
-                onChange={(e) => { setnewClient(prev => ({ ...prev, phone: e.target.value })) }}
+                value={newUser.phone}
+                onChange={(e) => { setnewUser(prev => ({ ...prev, phone: e.target.value })) }}
                 className="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/60 transition"
               />
             </div>
@@ -112,8 +111,8 @@ function RegisterPage() {
                 id="address"
                 name="address"
                 placeholder="123 Main St, New York"
-                value={newClient.address}
-                onChange={(e) => { setnewClient(prev => ({ ...prev, address: e.target.value })) }}
+                value={newUser.address}
+                onChange={(e) => { setnewUser(prev => ({ ...prev, address: e.target.value })) }}
                 className="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/60 transition"
               />
             </div>
@@ -128,8 +127,8 @@ function RegisterPage() {
                 id="email"
                 name="email"
                 placeholder="you@example.com"
-                value={newClient.email}
-                onChange={(e) => { setnewClient(prev => ({ ...prev, email: e.target.value })) }}
+                value={newUser.email}
+                onChange={(e) => { setnewUser(prev => ({ ...prev, email: e.target.value })) }}
                 className="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/60 transition"
               />
             </div>
@@ -145,8 +144,8 @@ function RegisterPage() {
                   id="password"
                   name="password"
                   placeholder="••••••••"
-                  value={newClient.password}
-                  onChange={(e) => { setnewClient(prev => ({ ...prev, password: e.target.value })) }}
+                  value={newUser.password}
+                  onChange={(e) => { setnewUser(prev => ({ ...prev, password: e.target.value })) }}
                   className="w-full bg-white/5 border border-white/10 text-white placeholder-slate-500 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/60 focus:border-blue-500/60 transition"
                 />
               </div>

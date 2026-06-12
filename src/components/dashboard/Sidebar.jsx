@@ -11,7 +11,7 @@ import {
   ChevronRight,
   FileStack,
 } from "lucide-react";
-import { getClient, logOutUser } from "../../services/client.service";
+import { getUser, logOutUser } from "../../services/user.service";
 
 const navItems = [
   { label: "Dashboard",        icon: LayoutDashboard, path: "/dashboard" },
@@ -34,7 +34,7 @@ function getInitials(name = "") {
 function Sidebar() {
   const location = useLocation();
   const navigate  = useNavigate();
-  const client    = getClient();
+  const user      = getUser();
   const [loggingOut, setLoggingOut] = useState(false);
 
   const handleLogout = () => {
@@ -93,19 +93,19 @@ function Sidebar() {
 
       {/* ── Client info + Logout ── */}
       <div className="px-3 py-4 border-t border-white/5">
-        {client ? (
+        {user ? (
           <div className="flex items-center gap-3 px-3 py-3 rounded-xl bg-white/5 mb-3">
             {/* Avatar */}
             <div className="w-9 h-9 flex-shrink-0 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-xs font-bold text-white shadow-md">
-              {getInitials(client.name || client.email)}
+              {getInitials(user.name || user.email)}
             </div>
             {/* Name & email */}
             <div className="flex-1 min-w-0">
               <p className="text-sm font-semibold text-white truncate leading-tight">
-                {client.name || "Client"}
+                {user.name || "User"}
               </p>
               <p className="text-[11px] text-slate-500 truncate">
-                {client.email}
+                {user.email}
               </p>
             </div>
           </div>

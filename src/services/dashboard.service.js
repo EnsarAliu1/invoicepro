@@ -1,7 +1,8 @@
 export const baseUrl = "http://localhost:5000";
 
-export function getTotalInvoices() {
-  return fetch(`${baseUrl}/invoices`, {
+export function getTotalInvoices(userId) {
+  const url = userId ? `${baseUrl}/invoices?userId=${userId}` : `${baseUrl}/invoices`;
+  return fetch(url, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

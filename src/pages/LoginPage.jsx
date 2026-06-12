@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { loginClient } from "../services/client.service";
+import { loginUser } from "../services/user.service";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,7 +9,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setError("");
-    loginClient(email, password)
+    loginUser(email, password)
       .then(() => {
         window.location.href = "/dashboard";
       }).catch((error) => {

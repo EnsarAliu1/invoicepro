@@ -1,25 +1,12 @@
 {
-  "clients": [
-    {
-      "id": "1",
-      "name": "Acme Corporation",
-      "email": "contact@acme.com",
-      "phone": "(212) 555-0101",
-      "address": "New York, USA"
-    },
-    {
-      "id": "2",
-      "name": "Bright Solutions",
-      "email": "hello@brightsolutions.com",
-      "phone": "(415) 555-0122",
-      "address": "California, USA"
-    },
+  "users": [
     {
       "id": "3",
       "name": "Filan Fisteku",
       "phone": "043577605",
       "address": "Rr.Harun Beka",
-      "email": "filanfisteku@gmail.com"
+      "email": "filanfisteku@gmail.com",
+      "password": "filan123"
     },
     {
       "name": "Albert Krasniqi",
@@ -28,6 +15,32 @@
       "email": "albertkras@gmail.com",
       "password": "albert123",
       "id": "VBbxn5QpT7c"
+    },
+    {
+      "name": "Ahmet Gashi",
+      "phone": "048123456",
+      "address": "Rr. Rruga e kombit",
+      "email": "ahmet@gmail.com",
+      "password": "ahmeti123",
+      "id": "kkb6lZVvbsw"
+    }
+  ],
+  "clients": [
+    {
+      "id": "1",
+      "name": "Acme Corporation",
+      "email": "contact@acme.com",
+      "phone": "(212) 555-0101",
+      "address": "New York, USA",
+      "userId": "VBbxn5QpT7c"
+    },
+    {
+      "id": "2",
+      "name": "Bright Solutions",
+      "email": "hello@brightsolutions.com",
+      "phone": "(415) 555-0122",
+      "address": "California, USA",
+      "userId": "3"
     }
   ],
   "items": [
@@ -50,7 +63,8 @@
     {
       "id": "1",
       "invoiceNumber": "INV-1001",
-      "clientId": 1,
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
       "issueDate": "2024-06-10",
       "dueDate": "2024-06-25",
       "paymentTerms": "Net 14 Days",
@@ -62,7 +76,8 @@
     {
       "id": "2",
       "invoiceNumber": "INV-1002",
-      "clientId": 2,
+      "clientId": "2",
+      "userId": "3",
       "issueDate": "2024-06-08",
       "dueDate": "2024-06-22",
       "paymentTerms": "Net 14 Days",
@@ -70,6 +85,188 @@
       "subtotal": 850,
       "tax": 0,
       "total": 850
+    },
+    {
+      "id": "3",
+      "invoiceNumber": "INV-1003",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2024-06-08",
+      "dueDate": "2024-06-22",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 850,
+      "tax": 0,
+      "total": 850
+    },
+    {
+      "id": "4",
+      "invoiceNumber": "INV-1004",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2024-06-11",
+      "dueDate": "2024-06-26",
+      "paymentTerms": "Net 15 Days",
+      "status": "Paid",
+      "subtotal": 1500,
+      "tax": 0,
+      "total": 1500
+    },
+    {
+      "id": "5",
+      "invoiceNumber": "INV-1005",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2024-06-12",
+      "dueDate": "2024-06-27",
+      "paymentTerms": "Net 15 Days",
+      "status": "Overdue",
+      "subtotal": 450,
+      "tax": 0,
+      "total": 450
+    },
+    {
+      "invoiceNumber": "KF-86129",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 1800,
+      "tax": 324,
+      "total": 2124,
+      "id": "-Kes1GG4x64"
+    },
+    {
+      "invoiceNumber": "KF-20095",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 2100,
+      "tax": 378,
+      "total": 2478,
+      "id": "qZia7CryDrg"
+    },
+    {
+      "invoiceNumber": "KF-70142",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 1800,
+      "tax": 0,
+      "total": 1800,
+      "id": "kkx9A0faAwM"
+    },
+    {
+      "invoiceNumber": "KF-44797",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 300,
+      "tax": 54,
+      "total": 354,
+      "id": "E5QSI23VqDE"
+    },
+    {
+      "invoiceNumber": "KF-59056",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 300,
+      "tax": 54,
+      "total": 354,
+      "id": "V7qmnVLbemA"
+    },
+    {
+      "invoiceNumber": "KF-95939",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 1800,
+      "tax": 324,
+      "total": 2124,
+      "id": "-mqVLdWLh74"
+    },
+    {
+      "invoiceNumber": "KF-24495",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 300,
+      "tax": 54,
+      "total": 354,
+      "id": "Wn3d7mv2InE"
+    },
+    {
+      "invoiceNumber": "KF-83485",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 1800,
+      "tax": 324,
+      "total": 2124,
+      "id": "nQOJaQMtgiI"
+    },
+    {
+      "invoiceNumber": "KF-42310",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 1800,
+      "tax": 324,
+      "total": 2124,
+      "id": "h8MHEaIL-CI"
+    },
+    {
+      "invoiceNumber": "KF-12540",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 300,
+      "tax": 54,
+      "total": 354,
+      "id": "SaGfSfXof9w"
+    },
+    {
+      "invoiceNumber": "KF-91059",
+      "clientId": "1",
+      "userId": "VBbxn5QpT7c",
+      "issueDate": "2026-06-12",
+      "dueDate": "2026-06-26",
+      "paymentTerms": "Net 14 Days",
+      "status": "Pending",
+      "subtotal": 1800,
+      "tax": 324,
+      "total": 2124,
+      "id": "o1a4VEZkpos"
     }
   ],
   "invoiceItems": [
@@ -90,6 +287,102 @@
       "qty": 1,
       "rate": 850,
       "amount": 850
+    },
+    {
+      "invoiceId": "-Kes1GG4x64",
+      "description": "Website Design",
+      "qty": 1,
+      "rate": 1800,
+      "amount": 1800,
+      "id": "VnWX-MU-stc"
+    },
+    {
+      "invoiceId": "qZia7CryDrg",
+      "description": "Website Design",
+      "qty": 1,
+      "rate": 1800,
+      "amount": 1800,
+      "id": "4n2MvTyp9jA"
+    },
+    {
+      "invoiceId": "qZia7CryDrg",
+      "description": "SEO Setup",
+      "qty": 1,
+      "rate": 300,
+      "amount": 300,
+      "id": "z6KWufgtOWc"
+    },
+    {
+      "invoiceId": "kkx9A0faAwM",
+      "description": "Website Design",
+      "qty": 1,
+      "rate": 1800,
+      "amount": 1800,
+      "id": "pq3hgaXzcDM"
+    },
+    {
+      "invoiceId": "E5QSI23VqDE",
+      "description": "SEO Setup",
+      "qty": 1,
+      "rate": 300,
+      "amount": 300,
+      "id": "3dfZwuTGiiw"
+    },
+    {
+      "invoiceId": "V7qmnVLbemA",
+      "description": "SEO Setup",
+      "qty": 1,
+      "rate": 300,
+      "amount": 300,
+      "id": "I4OT6PCh640"
+    },
+    {
+      "invoiceId": "-mqVLdWLh74",
+      "description": "Website Design",
+      "qty": 1,
+      "rate": 1800,
+      "amount": 1800,
+      "id": "rI-ZoIdCx44"
+    },
+    {
+      "invoiceId": "Wn3d7mv2InE",
+      "description": "SEO Setup",
+      "qty": 1,
+      "rate": 300,
+      "amount": 300,
+      "id": "3zx9jmpTFyw"
+    },
+    {
+      "invoiceId": "nQOJaQMtgiI",
+      "description": "Website Design",
+      "qty": 1,
+      "rate": 1800,
+      "amount": 1800,
+      "id": "wmAK8iGdhQE"
+    },
+    {
+      "invoiceId": "h8MHEaIL-CI",
+      "description": "Website Design",
+      "qty": 1,
+      "rate": 1800,
+      "amount": 1800,
+      "id": "oSMFGtOtoeY"
+    },
+    {
+      "invoiceId": "SaGfSfXof9w",
+      "description": "SEO Setup",
+      "qty": 1,
+      "rate": 300,
+      "amount": 300,
+      "id": "CkkyZ5ZEpT8"
+    },
+    {
+      "invoiceId": "o1a4VEZkpos",
+      "description": "Website Design",
+      "qty": 1,
+      "rate": 1800,
+      "amount": 1800,
+      "id": "hb4UPUADUag"
     }
   ],
   "payments": [
