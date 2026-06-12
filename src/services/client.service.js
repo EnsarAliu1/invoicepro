@@ -41,3 +41,7 @@ export function logOutUser() {
   localStorage.removeItem("clientId");
   localStorage.removeItem("client");
 }
+
+export function getClients() {
+  return fetch(`${baseUrl}/clients`).then((response) => response.json());
+}
